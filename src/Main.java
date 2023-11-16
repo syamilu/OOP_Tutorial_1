@@ -15,6 +15,7 @@ public class Main {
         Player playerOne = new Player(playerOneName);
         Player playerTwo = new Player(playerTwoName);
 
+        ConnectDB.addPlayer(playerOneName, playerTwoName);
         // starting the game
         for (int i = 3; i > 0; i--) {
             System.out.println("Starting game in " + i + " seconds...");
@@ -64,8 +65,10 @@ public class Main {
                 case 2:
                     if (turn == 1) {
                         playerOne.healPlayer(playerOne);
+                        System.out.println(playerOne.getName() + " heals for " + playerOne.getHeal() + " health!");
                     } else {
                         playerTwo.healPlayer(playerTwo);
+                        System.out.println(playerTwo.getName() + " heals for " + playerTwo.getHeal() + " health!");
                     }
                     break;
             }

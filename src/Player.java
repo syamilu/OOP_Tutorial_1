@@ -4,6 +4,7 @@ public class Player {
     private String name;
     private int health;
     private int damage;
+    private int heal;
 
     public Player(String name) {
         this.name = name;
@@ -28,6 +29,14 @@ public class Player {
         return health;
     }
 
+    public void setHeal(int num) {
+        this.heal = num;
+    }
+
+    public int getHeal() {
+        return this.heal;
+    }
+
     public void setDamage(int damage) {
         this.damage = damage;
     }
@@ -46,6 +55,7 @@ public class Player {
     public int healPlayer(Player player) {
         int randomNumber = (int) (Math.random() * 10) + 1;
         player.setHealth(-randomNumber);
+        player.setHeal(randomNumber);
         return player.getHealth();
     }
 
