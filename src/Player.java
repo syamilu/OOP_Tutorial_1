@@ -5,6 +5,8 @@ public class Player {
     private int health;
     private int damage;
     private int heal;
+    private Item[] items;// not yet developed
+    private int score;// not yet developed
 
     public Player(String name) {
         this.name = name;
